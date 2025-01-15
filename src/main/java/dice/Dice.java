@@ -3,7 +3,7 @@ package dice;
 import java.util.Random;
 
 public class Dice {
-    private Random random;
+    private final Random random;
 
     public Dice() {
         random = new Random();
@@ -11,7 +11,7 @@ public class Dice {
 
     public int roll(int sides) {
         if (sides <= 0) {
-            throw new IllegalArgumentException("bound must be positive");
+            throw new IllegalArgumentException("The number of sides must be positive.");
         }
         return random.nextInt(sides) + 1;
     }
